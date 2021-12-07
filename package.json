@@ -1,0 +1,10 @@
+{
+  "name": "prova-cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^9.1.1",
+    "faker": "^5.5.3"
+  }
+}
