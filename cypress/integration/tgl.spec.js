@@ -23,4 +23,9 @@ describe('TGL', () => {
     cy.get('button').click();
     cy.location('href').should('not.contain', '/register');
   });
+
+  it('Should logout', () => {
+    cy.get('ul > :nth-child(2) > button').click();
+    cy.location('href').should('contain', '/authentication');
+  });
 });
