@@ -36,4 +36,20 @@ describe('TGL', () => {
     cy.get('button').click();
     cy.location('href').should('not.contain', '/authentication');
   });
+
+  it('Should create new bets', () => {
+    cy.get('header > a').click();
+
+    cy.contains('button', 'Mega-Sena').click();
+
+    for (let i = 0; i < 7; i++) {
+      cy.get('.actions > :nth-child(1)').click();
+      cy.get('.hVxykY').click();
+    }
+
+    cy.get(':nth-child(4) > button').click();
+
+    cy.location('href').should('not.contain', '/new-bet');
+    cy.get('section > ul > li').should('have.length', '7');
+  });
 });
