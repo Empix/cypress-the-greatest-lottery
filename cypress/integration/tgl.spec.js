@@ -28,4 +28,12 @@ describe('TGL', () => {
     cy.get('ul > :nth-child(2) > button').click();
     cy.location('href').should('contain', '/authentication');
   });
+
+  it('Should login', () => {
+    cy.get('#email').type(credentials.email);
+    cy.get('#password').type(credentials.password);
+
+    cy.get('button').click();
+    cy.location('href').should('not.contain', '/authentication');
+  });
 });
